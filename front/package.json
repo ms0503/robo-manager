@@ -1,0 +1,58 @@
+{
+    "dependencies": {
+        "unplugin-vue-router": "^0.19",
+        "vue": "^3",
+        "vue-router": "^4"
+    },
+    "devDependencies": {
+        "@cloudflare/vite-plugin": "^1",
+        "@eslint/compat": "^2",
+        "@robo-manager/eslint-config": "*",
+        "@tailwindcss/language-server": "^0.14",
+        "@tailwindcss/vite": "^4",
+        "@tsconfig/node24": "^24",
+        "@types/node": "^24",
+        "@vitejs/plugin-vue": "^6",
+        "@vue/tsconfig": "^0.8",
+        "eslint": "^9",
+        "jiti": "^2",
+        "npm-run-all2": "^8",
+        "stylelint": "^17",
+        "stylelint-config-standard": "^40",
+        "stylelint-declaration-block-no-ignored-properties": "^2",
+        "stylelint-order": "^7",
+        "tailwindcss": "^4",
+        "typescript": "^5",
+        "vite": "^7",
+        "vite-plugin-vue-devtools": "^8",
+        "vite-tsconfig-paths": "^6",
+        "vue-tsc": "^3",
+        "wrangler": "^4"
+    },
+    "engines": {
+        "node": ">=24.0.0",
+        "npm": "use yarn instead",
+        "pnpm": "use yarn instead",
+        "yarn": ">=4.0.0"
+    },
+    "name": "@robo-manager/front",
+    "packageManager": "yarn@4.12.0",
+    "private": true,
+    "scripts": {
+        "build": "run-p typecheck \"build-only {@}\" --",
+        "build-only": "vite build",
+        "deploy": "yarn run build && wrangler deploy",
+        "dev": "vite",
+        "lint": "run-p 'lint:lint:*'",
+        "lint:fix": "run-p 'lint:fix:*'",
+        "lint:fix:js": "eslint --cache --cache-location ./node_modules/.cache/eslint/ --fix --no-warn-ignored ./**/*.{ts,vue}",
+        "lint:fix:style": "stylelint src/**/*.css --fix",
+        "lint:lint:js": "eslint --cache --cache-location ./node_modules/.cache/eslint/ --no-warn-ignored ./**/*.{ts,vue}",
+        "lint:lint:style": "stylelint src/**/*.css",
+        "preview": "yarn run build && wrangler dev",
+        "typecheck": "vue-tsc --build",
+        "typegen": "wrangler types"
+    },
+    "type": "module",
+    "version": "0.0.0"
+}

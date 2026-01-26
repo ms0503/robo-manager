@@ -1,0 +1,26 @@
+{
+    "devDependencies": {
+        "wrangler": "^4"
+    },
+    "engines": {
+        "node": ">=24.0.0",
+        "npm": "use yarn instead",
+        "pnpm": "use yarn instead",
+        "yarn": ">=4.0.0"
+    },
+    "packageManager": "yarn@4.12.0",
+    "scripts": {
+        "build": "yarn workspaces foreach -Aptv run build",
+        "deploy": "yarn workspaces foreach -Aptv run deploy",
+        "dev": "wrangler dev -c front/wrangler.toml -c back/wrangler.toml",
+        "lint": "yarn workspaces foreach -Aptv run lint",
+        "lint:fix": "yarn workspaces foreach -Aptv run lint:fix",
+        "typecheck": "yarn workspaces foreach -Aptv run typecheck",
+        "typegen": "yarn workspaces foreach -Aptv run typegen"
+    },
+    "workspaces": [
+        "back",
+        "front",
+        "packages/*"
+    ]
+}

@@ -1,0 +1,16 @@
+"$schema" = "../node_modules/wrangler/config-schema.json"
+compatibility_date = "2026-01-20"
+compatibility_flags = ["nodejs_compat"]
+main = "./src/index.ts"
+name = "robo-manager-back"
+
+[[d1_databases]]
+binding = "db"
+database_id = "271393ea-cabd-447d-88d8-b14e5eb9fecf"
+database_name = "robo-manager"
+
+[observability]
+enabled = true
+
+[placement]
+mode = "smart"
